@@ -1,0 +1,14 @@
+
+%macro up_cas(data,caslib=casuser) ;
+%let dsn=%scan(&data,-1, .);
+
+proc casutil;
+    droptable casdata="&dsn" incaslib="&caslib" quiet;
+	load data=&data outcaslib="&caslib"
+	casout="&dsn" promote;
+    save casdata="&dsn" incaslib="&caslib" outcaslib="&caslib"
+	casout="&dsn" replace;
+run;
+%mend;
+
+%up_cas(sashelp.baseball)

@@ -1,0 +1,11 @@
+/*Split cars to demo a join*/
+
+proc sort data=sashelp.cars 
+	out=car_stats (keep=model mpg: Cylinders 'Length'n Weight Horsepower Wheelbase EngineSize) nodupkey;
+by model;
+run;
+
+proc sort data=sashelp.cars 
+	out=car_details (drop= mpg: Cylinders 'Length'n Weight Horsepower Wheelbase EngineSize) nodupkey;
+by model;
+run;

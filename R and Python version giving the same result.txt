@@ -1,0 +1,17 @@
+R version    
+
+library(tidyverse)
+carsdf <- sd2df("sashelp.cars")
+carsAudi <- carsdf %>% filter(Make == "Audi")
+show(mean(carsAudi$Invoice, na.rm = TRUE),title = "Average Invoice for Audis")
+show(head(carsAudi), title = "Audi Vehicles");
+df2sd(carsAudi, "work.AUDI");
+
+
+Python version
+
+audi = SAS.sd2df('sashelp.cars(where=(Make="Audi"))')
+audi.info()
+SAS.show(audi.head(), title = "Audi Cars")
+SAS.show(audi['Invoice'].mean(), title = "Average Invoice for Audi")
+SAS.df2sd(audi, "work.AUDI")

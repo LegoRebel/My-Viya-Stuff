@@ -1,0 +1,46 @@
+﻿Make,Plant_Name,City,Country,Latitude_Y,Longitude_X,Estimated_Production_2004_Units,VIN_Plant_Code,Plant_Open_Date,Plant_Close_Date,Closure_Reason,Active_in_2004
+Acura,Sayama Plant,Sayama,Japan,35.852,139.412,250000,S,01/01/1964,, ,Yes
+Alfa Romeo,Arese Plant,Arese,Italy,45.5506,9.0777,0,A,01/01/1963,31/12/2002,Production relocation,Yes
+Aston Martin,Gaydon Plant,Gaydon,United Kingdom,52.18,-1.47,6500,G,01/01/2003,, ,Yes
+Audi,Ingolstadt Plant,Ingolstadt,Germany,48.7656,11.4258,400000,I,01/01/1964,, ,Yes
+Bentley,Crewe Factory,Crewe,United Kingdom,53.09,-2.43,9000,C,01/01/1946,, ,Yes
+BMW,Spartanburg Manufacturing Plant,Spartanburg,United States,34.9394,-82.005,140000,A,08/09/1994,, ,Yes
+Cadillac,Detroit-Hamtramck Assembly,Hamtramck,United States,42.382,-83.044,190000,H,01/01/1985,, ,Yes
+Chevrolet,Arlington Assembly,Arlington,United States,32.7692,-97.0858,300000,A,01/01/1954,, ,Yes
+Chrysler,Windsor Assembly,Windsor,Canada,42.283,-83.009,250000,R,01/01/1928,, ,Yes
+Citroen,PSA Rennes Plant,Rennes,France,48.1097,-1.75,350000,R,01/01/1961,, ,Yes
+Dodge,St. Louis Assembly,St. Louis,United States,38.64,-90.26,220000,B,01/01/1920,31/10/2008,Corporate restructuring,Yes
+Fiat,Melfi Plant,Melfi,Italy,40.996,15.655,430000,M,01/01/1993,, ,Yes
+Ford,Dearborn Assembly Plant,Dearborn,United States,42.307,-83.152,280000,F,28/09/1918,, ,Yes
+GMC,Flint Assembly,Flint,United States,43.016,-83.692,210000,F,01/01/1947,, ,Yes
+Honda,Marysville Auto Plant,Marysville,United States,40.236,-83.367,440000,M,01/11/1982,, ,Yes
+Hummer,AM General Mishawaka,Mishawaka,United States,41.662,-86.16,28000,M,01/01/1984,, ,Yes
+Hyundai,Ulsan Plant,Ulsan,South Korea,35.504,129.38,1500000,U,01/01/1968,, ,Yes
+Infiniti,Tochigi Plant,Tochigi,Japan,36.565,139.883,200000,T,01/01/1990,, ,Yes
+Jaguar,Browns Lane,Coventry,United Kingdom,52.404,-1.544,90000,B,01/01/1951,30/06/2005,Production relocation,Yes
+Land Rover,Solihull Plant,Solihull,United Kingdom,52.414,-1.78,170000,A,01/01/1948,, ,Yes
+Lexus,Tahara Plant,Tahara,Japan,34.654,137.263,450000,A,01/01/1979,, ,Yes
+Lincoln,Wixom Assembly,Wixom,United States,42.524,-83.536,160000,W,01/01/1957,31/05/2007,Corporate restructuring,Yes
+Mercedes-Benz,Sindelfingen Plant,Sindelfingen,Germany,48.707,8.999,300000,F,01/01/1915,, ,Yes
+Mercury,St. Thomas Assembly,St. Thomas,Canada,42.779,-81.183,250000,S,01/01/1967,15/09/2011,Brand discontinuation,Yes
+Mitsubishi,Okazaki Plant,Okazaki,Japan,34.954,137.174,300000,O,01/01/1978,, ,Yes
+Nissan,Oppama Plant,Yokosuka,Japan,35.287,139.651,240000,O,01/01/1961,, ,Yes
+Oldsmobile,Lansing Car Assembly,Lansing,United States,42.701,-84.555,80000,L,01/01/2001,01/05/2006,Brand discontinuation,Yes
+Peugeot,Sochaux Plant,Sochaux,France,47.51,6.832,370000,S,01/01/1912,, ,Yes
+Pontiac,Orion Assembly,Orion Township,United States,42.779,-83.239,180000,D,01/01/1983,, ,Yes
+Porsche,Zuffenhausen Plant,Stuttgart,Germany,48.834,9.157,85000,S,01/01/1950,, ,Yes
+Rolls-Royce,Goodwood Plant,Goodwood,United Kingdom,50.86,-0.758,1000,G,01/01/2003,, ,Yes
+Saab,Trollhattan Plant,Trollhattan,Sweden,58.283,12.288,130000,E,01/01/1949,19/12/2011,Manufacturer bankruptcy,Yes
+Saturn,Spring Hill Plant,Spring Hill,United States,35.752,-86.931,210000,Z,30/07/1990,30/10/2009,Brand discontinuation,Yes
+Scion,Takaoka Plant,Toyota City,Japan,35.073,137.156,320000,T,01/01/1966,, ,Yes
+Subaru,Subaru of Indiana Automotive,Lafayette,United States,40.417,-86.86,170000,4,11/09/1989,, ,Yes
+Suzuki,Kosai Plant,Kosai,Japan,34.717,137.533,500000,K,01/01/1967,, ,Yes
+Toyota,Tahara Plant,Tahara,Japan,34.654,137.263,500000,A,01/01/1979,, ,Yes
+Volkswagen,Wolfsburg Plant,Wolfsburg,Germany,52.423,10.786,750000,W,26/05/1938,, ,Yes
+Volvo,Torslanda Plant,Gothenburg,Sweden,57.722,11.77,240000,1,01/01/1964,, ,Yes
+MINI,Mini Plant,Oxford,United Kingdom,51.7319,-1.2213,288000,M,28/03/1913,,,Yes
+Mazda,Hiroshima Plant,Hiroshima,Japan,34.3779,132.5039,40000,0,01/11/1966,,,Yes
+Buick,Lansing Delta Township Assembly,Lansing,United States,42.738,-84.639,20000,B,01/01/2006,,,Yes
+Isuzu,Fujisawa Plant,Fujisawa City,Japan,35.39,139.467,30000,I,01/10/1961,,,Yes
+Jeep,Toledo Assembly Complex,Toledo,United States ,41.69,-83.53,180000,J,01/01/1940,,,Yes
+Kia,Kia Autoland Gwangmyeong,Gwangmyeong,South Korea,37.4387,126.8882,320000,K,01/06/1973,,,Yes

@@ -1,0 +1,4 @@
+audi = SAS.sd2df('sashelp.cars(where=(Make="Audi"))')
+audi.info()
+SAS.show(audi.head(), title = "Audi Cars");
+SAS.show(audi['Invoice'].mean(), title = "Average Invoice for Audi");
