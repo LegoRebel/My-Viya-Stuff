@@ -1,0 +1,86 @@
+%global title;
+
+%if &title = %then %do;
+%let title= star wars;
+%end;
+
+/* OMDb API key */
+%let api_key = 61faee7;
+
+/* Search text from Visual Analytics */
+%put NOTE: Search term = &title;
+
+/* Temp file for API response */
+filename omdbresp "/home/student/Data/omdb_search.json";
+
+/* Call OMDb SEARCH API (multi-row result) */
+proc http
+  url="https://www.omdbapi.com/?apikey=&api_key&s=%sysfunc(urlencode(&title))"
+  method="GET"
+  out=omdbresp;
+run;
+
+libname omdbjson json fileref=omdbresp;
+
+ods _all_ close;
+
+
+data sorted_film;
+    set omdbjson.search;
+    where upcase(type)="MOVIE";
+run;
+
+proc sort data =sorted_film nodupkey;
+    by descending imdbid;
+run;
+
+
+data _null_;
+  set sorted_film;
+ 
+  link=cats("https://www.boxofficemojo.com//title/",imdbID,"/?ref_=bo_cso_ta");
+  file _webout mod lrecl=32767 encoding='utf-8';
+
+  /* Container for one movie */
+put '<div style="';
+put 'border:1px solid #ddd;';
+put 'border-radius:6px;';
+put 'padding:12px;';
+put 'margin-bottom:15px;';
+put 'background:white;';
+put 'overflow:auto;';
+put 'max-width:1000px;';
+put '">';
+
+/* Poster (clickable) */
+if Poster ne "N/A" then do;
+  put '<a href="' link +(-1) '" ';
+  put 'target="_blank" rel="noopener noreferrer">';
+  put '<img src="' Poster +(-1) '" ';
+  put 'style="float:right;width:120px;margin-left:15px;cursor:pointer;">';
+  put '</a>';
+end;
+
+/* Title (clickable) */
+put '<h3 style="margin-top:0;">';
+put '<a href="' link +(-1) '" ';
+put 'target="_blank" rel="noopener noreferrer" ';
+put 'style="text-decoration:none;color:#0078D4;">';
+put Title ' (' Year ')';
+put '</a>';
+put '</h3>';
+
+/* Supporting information */
+put '<p><strong>Type:</strong> ' Type '</p>';
+put '<p><strong>IMDb ID:</strong> ' imdbID '</p>';
+
+/* User guidance text */
+put '<p style="font-size:13px;color:#555;">';
+put 'Click the <strong>movie title</strong> or the <strong>poster</strong> ';
+put 'to open detailed box office information in a new browser tab.';
+put '</p>';
+
+put '</div>';
+run;
+
+libname omdbjson clear;

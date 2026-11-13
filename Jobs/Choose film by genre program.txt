@@ -1,0 +1,95 @@
+
+%global title;
+
+/* OMDb API key */
+
+%let api_key = 61faee7;
+
+/* movie_title comes from Visual Analytics */
+%put NOTE: Movie requested = &title;
+
+/* Temp file for API response */
+filename omdbresp "/home/student/Data/omdb.json";
+
+/* Call OMDb API */
+proc http
+  url="https://www.omdbapi.com/?apikey=&api_key&t=%sysfunc(urlencode(&title))"
+  method="GET"
+  out=omdbresp;
+run;
+
+/* Read JSON */
+libname omdbjson json fileref=omdbresp;
+
+/* Promote values to macro variables */
+data job_data;
+  set omdbjson.root;
+
+  if Response = "False" then do;
+    call symputx('mv_error', Error);
+    stop;
+  end;
+
+  call symputx('mv_title',      Title);
+  call symputx('mv_year',       Year);
+  call symputx('mv_rating',     imdbRating);
+  call symputx('mv_genre',      Genre);
+  call symputx('mv_director',   Director);
+  call symputx('mv_poster', Poster);
+run;
+ods _all_ close;
+
+data _null_;
+  set job_data;
+  link=cats("https://www.boxofficemojo.com//title/",imdbID,"/?ref_=bo_cso_ta");
+  file _webout lrecl=32767 encoding='utf-8';
+
+  put '<div style="font-family:Segoe UI, Arial; padding:10px;">';
+
+  /* Poster (clickable) */
+if Poster ne "N/A" then do;
+  put '<a href="' link +(-1) '" ';
+  put 'target="_blank" rel="noopener noreferrer">';
+  put '<img src="' Poster +(-1) '" ';
+  put 'style="float:right;width:240px;margin-left:15px;cursor:pointer;">';
+  put '</a>';
+end;
+
+/* Title (clickable) */
+put '<h3 style="margin-top:0;">';
+put '<a href="' link +(-1) '" ';
+put 'target="_blank" rel="noopener noreferrer" ';
+put 'font-size:20px;font-weight:600;color:#0078D4;text-decoration:none;">';
+put Title ' (' Year ')';
+put '</a>';
+put '</h3>';
+
+  put '<p><strong>Genre:</strong> ' Genre '</p>';
+  put '<p><strong>Director:</strong> ' Director '</p>';
+  put '<p><strong>Run Time:</strong> ' runtime '</p>';
+  put '<p><strong>IMDb Rating:</strong> ' imdbRating '</p>';
+  put '<p><strong>Box Office:</strong> ' Boxoffice '</p>';
+    put '<p style="font-size:16px; line-height:1.5;">' Plot '</p>';
+
+put '</p>';
+put '<div style="height:80px;"></div>';
+put '<div style="';
+  put 'background:#fff4ce;';
+  put 'border:1px solid #ffb900;';
+  put 'padding:12px;';
+  put 'margin-bottom:15px;';
+  put 'max-width:1000px;';
+  /* put 'margin-left:auto;';
+  put 'margin-right:auto;'; */
+  put 'font-family:Segoe UI, Arial;';
+  put 'font-size:14px;';
+  put '">';
+  put 'Click the <strong>movie title</strong> or the <strong>poster</strong> ';
+  put 'to open detailed box office information in a new browser tab.<br><br>';
+  put '<strong>To change the Film Selection:</strong><br><br>';
+  put 'Click the <strong>three vertical dots (⋮)</strong> in the top-right corner of this panel.<br>';
+  put 'Then select <strong>Set Job Parameters</strong> to select your film choice';
+  put '</div>';
+
+run;
+/* SAS templated code goes here */

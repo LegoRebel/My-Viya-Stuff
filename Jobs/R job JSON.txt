@@ -1,0 +1,81 @@
+{
+	"showPageContentOnly": true,
+	"pages": [
+		{
+			"id": "page1",
+			"type": "page",
+			"label": "Page 1",
+			"children": [
+				{
+					"id": "dsn",
+					"type": "inputtable",
+					"label": "Select the data set",
+					"required": true,
+					"placeholder": "",
+					"visible": "",
+					"filter": false
+				},
+				{
+					"id": "numx",
+					"type": "columnselector",
+					"label": "Select Numeric for X axis",
+					"include": null,
+					"order": false,
+					"columntype": "n",
+					"max": null,
+					"min": null,
+					"visible": "",
+					"table": "dsn"
+				},
+				{
+					"id": "fill_var",
+					"type": "columnselector",
+					"label": "Select Numeric for Y axis",
+					"include": null,
+					"order": false,
+					"columntype": "n",
+					"max": null,
+					"min": null,
+					"visible": "",
+					"table": "dsn"
+				},
+				{
+					"id": "xvar",
+					"type": "columnselector",
+					"label": "Select Character Variable for X axis",
+					"include": null,
+					"order": false,
+					"columntype": "a",
+					"max": null,
+					"min": null,
+					"visible": "",
+					"table": "dsn"
+				},
+				{
+					"id": "yvar",
+					"type": "columnselector",
+					"label": "Select Character Variable for Y axis",
+					"include": null,
+					"order": false,
+					"columntype": "c",
+					"max": null,
+					"min": null,
+					"visible": "",
+					"table": "dsn"
+				}
+			]
+		}
+	],
+	"syntaxversion": "1.3.0",
+	"values": {
+		"dsn": {
+			"library": "",
+			"table": ""
+		},
+		"numx": [],
+		"fill_var": [],
+		"xvar": [],
+		"yvar": []
+	},
+	"promptHierarchies": []
+}
