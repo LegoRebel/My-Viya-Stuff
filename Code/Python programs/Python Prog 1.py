@@ -1,0 +1,6 @@
+#org_sel = SAS.sd2df("sashelp.cars")
+org_sel = SAS.sd2df("sashelp.cars(where=(origin='Europe'))")
+org_sel.info()
+SAS.show(org_sel.head(), title = "Cars from Eutope")
+SAS.show(org_sel['Invoice'].mean(), title = "Average Invoice for Europe")
+SAS.df2sd(org_sel, "work.py_Europe")
