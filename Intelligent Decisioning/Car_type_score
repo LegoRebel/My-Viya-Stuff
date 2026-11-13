@@ -1,0 +1,23 @@
+/*{"signatureExtension":[{"name":"type","description":"","dataType":"string","direction":"inOut","generateDataGridColumns":false},{"name":"fun_factor","description":"","dataType":"string","direction":"output","generateDataGridColumns":false},{"name":"score","description":"","dataType":"decimal","direction":"inOut","generateDataGridColumns":false}]}*/
+package "${PACKAGE_NAME}" /inline;
+   method execute(in_out varchar type,
+                  in_out varchar fun_factor,
+                  in_out double score);
+    if MISSING(type) then type ='Unknown';
+    if UPCASE(type) in ('SEDAN', 'SUV','HYBRID') then do;
+            score=score + 1;
+            fun_factor = 'Low';
+    end;
+	Else if UPCASE(type) in('WAGON', 'TRUCK')  then do;
+            score=score +2;
+            fun_factor = 'Medium';
+    end;
+
+    Else if UPCASE(type) in('SPORTS')  then do;
+            score=score +3;
+            fun_factor = 'High';
+    end;
+    
+    end;
+   
+endpackage;
